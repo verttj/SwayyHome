@@ -1,0 +1,195 @@
+/* 11-11 // github.com/verttj/SwayyHome */
+
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Cascadia Code", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #232836;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 10px;
+    background-color: #30374b;
+    color: #ffffff;
+    border-radius: 50;
+    margin: 10px 0 10px 10px;
+}
+
+#workspaces button:hover {
+    color: #d6b692;
+}
+
+#workspaces button.focused {
+    color: #d6b692;
+}
+
+#mode {
+    background-color: #64727D;
+}
+
+/* Spotify */
+.custom-spotify {
+    padding: 10px;
+    margin: 10px 0 10px 15px;
+    background-color: #30374b;
+    color: #d6b692;
+    font-size: 12px;
+    border-radius: 50;
+}
+
+#custom-powerctrl {
+	padding: 10px;
+	margin: 10px 10px 10px 5px;
+	border-radius: 50;
+	background-color: #30374b;
+	color: #d6b692;
+	font-size: 16px;
+}
+
+/* Border Radius */
+
+#custom-border-left {
+	background-color: #30374b;
+	padding: 6px;
+	margin: 10px 0 10px 0;
+	border-top-left-radius: 50;
+	border-bottom-left-radius: 50;
+}
+
+#custom-border-right {
+	background-color: #30374b;
+	padding: 6px;
+	margin: 10px 10px 10px 0;
+	border-top-right-radius: 50;
+	border-bottom-right-radius: 50;
+}
+
+#custom-spacing {
+	padding: 1px;
+	margin: 10px 0 10px 0;
+	background-color: #30374b;
+}
+
+/* everything */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#clock,
+#language,
+#keyboard-state
+{
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    color: #ffffff;
+    background-color: #30374b;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#battery.charging, #battery.plugged {
+    color: #d6b692;
+}
+
+@keyframes blink {
+    to {
+        color: red;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #d6b692;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#temperature.critical {
+    color: #d6b692;
+}
+
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+
+#idle_inhibitor.activated {
+    color: #d6b692;
+}
+
+#mpd {
+    color: #d6b692;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
